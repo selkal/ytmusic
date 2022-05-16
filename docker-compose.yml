@@ -1,0 +1,14 @@
+version: "3.3"
+
+services:
+  ytmusicapi:
+    build: .
+    container_name: ytmusicapi
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "2m"
+        max-file: "5"
+    ports:
+      - 80:80
